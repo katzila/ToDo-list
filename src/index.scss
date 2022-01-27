@@ -1,0 +1,38 @@
+$dark-grey: #232529;
+$light-grey: #292c31;
+$border-grey: #35383f;
+$red: #e3796a;
+
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    outline: none;
+    font: 16px "Century Gothic", sans-serif;
+    color: #fff;
+    border-collapse: collapse;
+}
+
+body {
+    background: $dark-grey;
+}
+
+.app {
+    border: 5px solid $border-grey;
+    border-radius: 5px;
+    width: 1000px;
+    height: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    &-leftbar {
+        float: left;
+        box-sizing: border-box;
+        width: 215px;
+        height: 100%;
+        background: $light-grey;
+        border-right: 5px solid $border-grey;
+        padding: 10px;
+    }
+}

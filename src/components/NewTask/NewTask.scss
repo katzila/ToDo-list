@@ -1,0 +1,76 @@
+$dark-grey: #232529;
+$light-grey: #292c31;
+$border-grey: #35383f;
+$red: #e3796a;
+
+.newtask {
+    &-button {
+        font-size: 22px;
+        text-align: center;
+        padding: 6px;
+        margin-top: 37px;
+        width: 200px;
+        cursor: pointer;
+        box-sizing: border-box;
+        &:hover {
+            border-right: 5px solid $red;
+            color: $red;
+            width: 205px;
+        }
+    }
+    &-form {
+        font-weight: bold;
+        position: fixed;
+        top: 50%;
+        left: calc(50% + 100px);
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 156px;
+        border: 5px solid $border-grey;
+        border-radius: 5px;
+        background-color: $light-grey;
+        padding: 10px;
+        &-field{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding:10px;
+            width: 274px;
+            height: 63px;
+            background: $dark-grey;
+            outline: none;
+            border: 3px solid $border-grey;
+            border-radius: 5px;
+            resize: none;
+        }
+        &-exit {
+            text-align: center;
+            font-size: 17px;
+            font-weight: bold;
+            float: right;
+            width: 30px;
+            height: 22px;
+            background: black;
+            border: 3px solid $border-grey;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        &-add{
+            font-size: 14px;
+            margin: auto;
+            width: 70px;
+            height: 22px;
+            text-align: center;
+            background: $dark-grey;
+            border: 3px solid $border-grey;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+}
+
+.plus {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 5px;
+}

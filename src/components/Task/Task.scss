@@ -1,0 +1,56 @@
+$dark-grey: #232529;
+$light-grey: #292c31;
+$border-grey: #35383f;
+$red: #e3796a;
+
+.task {
+    height: 40px;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    font-weight: bold;
+    overflow: hidden;
+    cursor: pointer;
+    &:hover {
+        border-right: 5px solid $red;
+        color: $red;
+        width: 205px;
+    }
+
+    &-active {
+        box-sizing: border-box;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        width: 205px;
+        border-right: 5px solid $red;
+        color: $red;
+    }
+}
+.circle {
+    &-waiting {
+        display: inline-block;
+        border-radius: 15px;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        background: rgb(80, 77, 77);
+    }
+    &-done {
+        display: inline-block;
+        border-radius: 15px;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        background: rgb(6, 88, 6);
+    }
+    &-processing {
+        display: inline-block;
+        border-radius: 15px;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        background: rgb(62, 78, 143);
+    }
+}
