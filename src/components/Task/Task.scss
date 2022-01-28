@@ -9,7 +9,7 @@ $red: #e3796a;
     width: 185px;
     cursor: pointer;
 
-    &:hover {
+    &:hover { 
         color:$red;
         width: 185px;
     }
@@ -22,7 +22,7 @@ $red: #e3796a;
         text-overflow: ellipsis;
         &:hover{color: $red;}
     }
-    &-active {
+    &-active { //выделить активную задачу
         box-sizing: border-box;
         padding: 10px;
         width: 185px;
@@ -38,6 +38,8 @@ $red: #e3796a;
         }
     }
 }
+
+//класс задающий стили для кружков соответствующим статусу задачи
 .circle {
     &-waiting {
         display: inline-block;
