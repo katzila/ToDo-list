@@ -1,45 +1,45 @@
+//деструктуризация и доставние useEffect и useState
 import { useEffect, useState } from "react"
 
 function Content({ task, changeStatus, removeTask, changeTaskContent }) {
 
-    const [tempTask, setTempTask] = useState({...task});
+    const [tempTask, setTempTask] = useState({...task});//временное хранилище для полей с заголовком и текстом содержимым
 
      useEffect(()=>{
-         setTempTask({...task});
+         setTempTask({...task}); // обновляем временное содержимое если task поменялось из вне
     },[task]);
 
-    const handleEnterPress = (e) => {
+    const handleEnterPress = (e) => { //запрет на ввод enter
         if(e.key === "Enter"){
             e.preventDefault();
-            handleCilickSave();
         }
     }
-    const handleCilickSave=()=>{
+    const handleCilickSave=()=>{ //сохранить всё из временного хранилища в основном
         changeTaskContent(task.id, tempTask.label, tempTask.text);
     }
-    const handleClickDelete=(id)=>{
+    const handleClickDelete=(id)=>{ // очистить поля и удалить задачу с заданным id
         setTempTask({
             ...tempTask,
             text:"",
             label: ""
         })
-        removeTask(id)
+        removeTask(id); //послать id задачи на удаление
     }
 
-    const handleHeaderChange = (event) => {
+    const handleHeaderChange = (event) => { //обновить заголовок при вводе
         setTempTask({
             ...tempTask,
             label: event.target.value
         })
     }
-    const handleTextChange = (event) => {
+    const handleTextChange = (event) => { //обновить текст при вводе
         setTempTask({
             ...tempTask,
             text: event.target.value
         })
     }
 
-    return (
+    return ( // рендер поля редактирования заголовка, панели с кнопка изменения статуса из сохранения либо удаления задачи, поля редактирования текста
         <div className="content">
             <textarea value={tempTask ? tempTask.label : ''} placeholder="Покормить кота" onChange={handleHeaderChange} className="content-taskheader" onKeyDown={handleEnterPress} />
             <div className="content-buttons">
@@ -53,4 +53,4 @@ function Content({ task, changeStatus, removeTask, changeTaskContent }) {
         </div>
     )
 }
-export default Content;
+export default Content; //экспортирую всё это добро
