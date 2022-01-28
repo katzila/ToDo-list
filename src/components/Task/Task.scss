@@ -8,6 +8,7 @@ $red: #e3796a;
     padding: 10px;
     width: 185px;
     cursor: pointer;
+    height: 45px;
 
     &:hover { 
         color:$red;
@@ -17,17 +18,21 @@ $red: #e3796a;
         text-align: center;
         font-weight: bold;
         width: 145px;
+        height: 20px;
         display: inline-block;
         overflow: hidden;
         text-overflow: ellipsis;
+        
         &:hover{color: $red;}
     }
     &-active { //выделить активную задачу
         box-sizing: border-box;
         padding: 10px;
         width: 185px;
+        height: 45px;
         color: $red;
         p {
+            height: 20px;
             color: $red;
             text-align: center;
             font-weight: bold;
