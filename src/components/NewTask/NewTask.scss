@@ -4,18 +4,21 @@ $border-grey: #35383f;
 $red: #e3796a;
 
 .newtask {
+    direction: ltr;
     &-button {
+        z-index: 2;
         font-size: 22px;
         text-align: center;
         padding: 6px;
-        margin-top: 37px;
-        width: 200px;
+        margin-top: 35px;
+        margin-bottom: 15px;
+        border-bottom: 5px solid $border-grey;
+        width: 185px;
         cursor: pointer;
         box-sizing: border-box;
         &:hover {
-            border-right: 5px solid $red;
             color: $red;
-            width: 205px;
+            width: 185px;
         }
     }
     &-form {

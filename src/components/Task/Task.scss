@@ -4,28 +4,38 @@ $border-grey: #35383f;
 $red: #e3796a;
 
 .task {
-    height: 40px;
     box-sizing: border-box;
     padding: 10px;
-    text-align: center;
-    width: 200px;
-    font-weight: bold;
-    overflow: hidden;
+    width: 185px;
     cursor: pointer;
-    &:hover {
-        border-right: 5px solid $red;
-        color: $red;
-        width: 205px;
-    }
 
+    &:hover {
+        color:$red;
+        width: 185px;
+    }
+    p {
+        text-align: center;
+        font-weight: bold;
+        width: 145px;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &:hover{color: $red;}
+    }
     &-active {
         box-sizing: border-box;
         padding: 10px;
-        text-align: center;
-        font-weight: bold;
-        width: 205px;
-        border-right: 5px solid $red;
+        width: 185px;
         color: $red;
+        p {
+            color: $red;
+            text-align: center;
+            font-weight: bold;
+            width: 145px;
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
 }
 .circle {

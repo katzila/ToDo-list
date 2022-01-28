@@ -34,5 +34,7 @@ body {
         background: $light-grey;
         border-right: 5px solid $border-grey;
         padding: 10px;
+        overflow-y: scroll;
+        direction: rtl;
     }
 }

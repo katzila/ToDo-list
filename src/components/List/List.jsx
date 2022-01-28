@@ -1,23 +1,28 @@
 
+import React from "react";
 import NewTask from "../NewTask/NewTask";
 import Task from "../Task/Task";
 
-function List({ tasks, addNewTask, changeActiveTo}) {
+function List({ tasks, addNewTask, changeActiveTo }) {
 
     const handleClick = (task) => {
         if (task.isActive) return;
         changeActiveTo(task);
     }
     return (
-        <ul className="list">
-            <header key={0} className="list-header">Задачи: {tasks.length}</header>
-            {
-                tasks.map((task) =>
-                    <Task task={task} key={task.id} handleClick={handleClick}/>
-                )
-            }
+        <React.Fragment>
+            <header className="list-header">Задачи: {tasks.length}</header>
             <NewTask addNewTask={addNewTask} />
-        </ul>);
+            <ul className="list">
+                {
+                    tasks.map((task) =>
+                        <Task task={task} key={task.id} handleClick={handleClick} />
+                    )
+                }
+            </ul>
+        </React.Fragment>
+    );
+
 }
 
 export default List;
