@@ -49,7 +49,7 @@ function NewTask({ addNewTask }) {
 
                 <div onClick={handleCliclOnExitButton} className="newtask-form-exit">X</div>
                 Наименование заметки
-                <textarea className="newtask-form-field" placeholder="Покормить кота..." onChange={handleChange} onKeyDown={handleEnterPress} />
+                <input className="newtask-form-field" placeholder="Покормить кота..." onChange={handleChange} onKeyDown={handleEnterPress} />
 
                 <div onClick={handleCliclOnAddButton} className="newtask-form-add">Добавить</div>
 
