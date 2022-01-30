@@ -9,11 +9,6 @@ function Content({ task, changeStatus, removeTask, changeTaskContent }) {
          setTempTask({...task}); // обновляем временное содержимое если task поменялось из вне
     },[task]);
 
-    const handleEnterPress = (e) => { //запрет на ввод enter
-        if(e.key === "Enter"){
-            e.preventDefault();
-        }
-    }
     const handleCilickSave=()=>{ //сохранить всё из временного хранилища в основном
         changeTaskContent(task.id, tempTask.label, tempTask.text);
     }
@@ -41,7 +36,7 @@ function Content({ task, changeStatus, removeTask, changeTaskContent }) {
 
     return ( // рендер поля редактирования заголовка, панели с кнопка изменения статуса из сохранения либо удаления задачи, поля редактирования текста
         <div className="content">
-            <textarea value={tempTask ? tempTask.label : ''} placeholder="Покормить кота" onChange={handleHeaderChange} className="content-taskheader" onKeyDown={handleEnterPress} />
+            <input value={tempTask ? tempTask.label : ''} placeholder="Покормить кота" onChange={handleHeaderChange} className="content-taskheader" />
             <div className="content-buttons">
                 <div className="content-buttons-done" onClick={() => { changeStatus(task.id, "done") }}>Выполнена</div>
                 <div className="content-buttons-waiting" onClick={() => { changeStatus(task.id, "waiting") }}>Ожидает</div>
