@@ -1,17 +1,18 @@
-//деструктуризация и доставние useEffect и useState
+//деструктуризация и доставание useEffect и useState
 import { useEffect, useState } from "react"
 
 function Content({ task, changeStatus, removeTask, changeTaskContent }) {
 
-    const [tempTask, setTempTask] = useState({...task});//временное хранилище для полей с заголовком и текстом содержимым
+    const [tempTask, setTempTask] = useState({...task});//временное хранилище для полей с заголовком и текстом
 
      useEffect(()=>{
-         setTempTask({...task}); // обновляем временное содержимое если task поменялось из вне
+         setTempTask({...task}); // обновляем временное содержимое, если task поменялось извне
     },[task]);
 
-    const handleCilickSave=()=>{ //сохранить всё из временного хранилища в основном
+    const handleCilickSave=()=>{ //сохранить всё из временного хранилища в основное
         changeTaskContent(task.id, tempTask.label, tempTask.text);
     }
+
     const handleClickDelete=(id)=>{ // очистить поля и удалить задачу с заданным id
         setTempTask({
             ...tempTask,
@@ -34,7 +35,7 @@ function Content({ task, changeStatus, removeTask, changeTaskContent }) {
         })
     }
 
-    return ( // рендер поля редактирования заголовка, панели с кнопка изменения статуса из сохранения либо удаления задачи, поля редактирования текста
+    return ( // рендер поля для редактирования заголовка, поля редактирования текста, панели с кнопками : изменения статуса, сохранения задачи, удаления задачи
         <div className="content">
             <input value={tempTask ? tempTask.label : ''} placeholder="Покормить кота" onChange={handleHeaderChange} className="content-taskheader" />
             <div className="content-buttons">

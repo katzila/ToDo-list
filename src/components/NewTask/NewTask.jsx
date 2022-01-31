@@ -16,7 +16,7 @@ function NewTask({ addNewTask }) {
             setLastId(lastId+1);
         }
     }
-    const handleCliclOnAddButton = () => { //при нажатии кнопки добавить, если поле ввода не пусто- добавить задачу, иначе просто закрыть форму
+    const handleCliclOnAddButton = () => { //при нажатии кнопки "добавить", если поле ввода не пустое - добавить задачу, иначе - просто закрыть форму
         if (text==''){
             handleCliclOnExitButton();
             return;
@@ -31,13 +31,13 @@ function NewTask({ addNewTask }) {
         setText('');
     }
 
-    const handleEnterPress = (e) => { //если нажать ввод добавляется новая задача, как при нажатии добавить
+    const handleEnterPress = (e) => { //если нажать "Enter" добавляется новая задача, аналогично нажатию кнопки "добавить"
         if(e.key === "Enter"){
             handleCliclOnAddButton();
         }
     }
 
-    return ( // рендер кнопки новая задача, при нажатии на которую рендерится форма, закрывается по нажатию на крестик, либо добавлении новой задачи
+    return ( // рендер кнопки "новая задача", при нажатии на которую рендерится форма, которая закрывается по нажатию на крестик, либо добавлении новой задачи по нажатию "добавить"
         <div className="newtask">
             <div onClick={handleCliclOnNewTaskButton} className="newtask-button">
 

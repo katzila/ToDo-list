@@ -1,7 +1,7 @@
 //импорт реакта
 import React from "react";
 
-//и всех компонентов необходимых
+//и необходимых компонентов
 import NewTask from "../NewTask/NewTask";
 import Task from "../Task/Task";
 
@@ -12,7 +12,7 @@ function List({ tasks, addNewTask, changeActiveTo }) {
         if (task.isActive) return;
         changeActiveTo(task);
     }
-    return ( //заголовок, кнопка добавления задачи, список содержащий всебе .map для рендера каждого оглавления из tasks кллюч=task.id
+    return ( //заголовок "задачи: {N}", кнопка "Новая задача", список содержащий в себе .map для рендера каждого оглавления из tasks, ключ=task.id
         <React.Fragment> 
             <header className="list-header">Задачи: {tasks.length}</header>
             <NewTask addNewTask={addNewTask} />
