@@ -10,36 +10,36 @@ function NewTask({ addNewTask }) {
     const handleChange = (event) => { // если что-то ввели в поле - обновить text
         setText(event.target.value);
     }
-    const handleCliclOnNewTaskButton = () => { //при нажатии на кнопку "новая задача" - показать форму и увеличить ид, для новой задачи
+    const handleClickOnNewTaskButton = () => { //при нажатии на кнопку "новая задача" - показать форму и увеличить ид, для новой задачи
         if (!isVisible) {
             setIsVisible(true);
-            setLastId(lastId+1);
+            setLastId(lastId + 1);
         }
     }
-    const handleCliclOnAddButton = () => { //при нажатии кнопки "добавить", если поле ввода не пустое - добавить задачу, иначе - просто закрыть форму
-        if (text==''){
-            handleCliclOnExitButton();
+    const handleClickOnAddButton = () => { //при нажатии кнопки "добавить", если поле ввода не пустое - добавить задачу, иначе - просто закрыть форму
+        if (text == '') {
+            handleClickOnExitButton();
             return;
         }
         setIsVisible(false);
         addNewTask(lastId, text);
         setText('');
     }
-    const handleCliclOnExitButton = () => { //при нажатии на крестик закрыть форму и вернуться к старому lastId, текстовое поле очищается
+    const handleClickOnExitButton = () => { //при нажатии на крестик закрыть форму и вернуться к старому lastId, текстовое поле очищается
         setIsVisible(false);
-        setLastId(lastId-1);
+        setLastId(lastId - 1);
         setText('');
     }
 
     const handleEnterPress = (e) => { //если нажать "Enter" добавляется новая задача, аналогично нажатию кнопки "добавить"
-        if(e.key === "Enter"){
-            handleCliclOnAddButton();
+        if (e.key === "Enter") {
+            handleClickOnAddButton();
         }
     }
 
     return ( // рендер кнопки "новая задача", при нажатии на которую рендерится форма, которая закрывается по нажатию на крестик, либо добавлении новой задачи по нажатию "добавить"
         <div className="newtask">
-            <div onClick={handleCliclOnNewTaskButton} className="newtask-button">
+            <div onClick={handleClickOnNewTaskButton} className="newtask-button">
 
                 <div className="plus">+</div>
                 Новая задача
@@ -47,11 +47,11 @@ function NewTask({ addNewTask }) {
             </div>
             {isVisible && <div className="newtask-form">
 
-                <div onClick={handleCliclOnExitButton} className="newtask-form-exit">X</div>
+                <div onClick={handleClickOnExitButton} className="newtask-form-exit">X</div>
                 Наименование заметки
                 <input className="newtask-form-field" placeholder="Покормить кота..." onChange={handleChange} onKeyDown={handleEnterPress} />
 
-                <div onClick={handleCliclOnAddButton} className="newtask-form-add">Добавить</div>
+                <div onClick={handleClickOnAddButton} className="newtask-form-add">Добавить</div>
 
             </div>}
         </div>

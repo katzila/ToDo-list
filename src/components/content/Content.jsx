@@ -3,20 +3,20 @@ import { useEffect, useState } from "react"
 
 function Content({ task, changeStatus, removeTask, changeTaskContent }) {
 
-    const [tempTask, setTempTask] = useState({...task});//временное хранилище для полей с заголовком и текстом
+    const [tempTask, setTempTask] = useState({ ...task });//временное хранилище для полей с заголовком и текстом
 
-     useEffect(()=>{
-         setTempTask({...task}); // обновляем временное содержимое, если task поменялось извне
-    },[task]);
+    useEffect(() => {
+        setTempTask({ ...task }); // обновляем временное содержимое, если task поменялось извне
+    }, [task]);
 
-    const handleCilickSave=()=>{ //сохранить всё из временного хранилища в основное
+    const handleCilickSave = () => { //сохранить всё из временного хранилища в основное
         changeTaskContent(task.id, tempTask.label, tempTask.text);
     }
 
-    const handleClickDelete=(id)=>{ // очистить поля и удалить задачу с заданным id
+    const handleClickDelete = (id) => { // очистить поля и удалить задачу с заданным id
         setTempTask({
             ...tempTask,
-            text:"",
+            text: "",
             label: ""
         })
         removeTask(id); //послать id задачи на удаление
@@ -45,7 +45,7 @@ function Content({ task, changeStatus, removeTask, changeTaskContent }) {
                 <div className="content-buttons-save" onClick={() => { handleCilickSave() }}>Сохранить</div>
                 <div className="content-buttons-delete" onClick={() => { handleClickDelete(task.id); }}>Удалить</div>
             </div>
-            <textarea value={tempTask ? tempTask.text : ""} placeholder="дойти до магазина и купить корм" onChange={handleTextChange} className="content-field"/>
+            <textarea value={tempTask ? tempTask.text : ""} placeholder="дойти до магазина и купить корм" onChange={handleTextChange} className="content-field" />
         </div>
     )
 }

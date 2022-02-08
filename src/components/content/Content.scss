@@ -17,7 +17,8 @@ $red: #e3796a;
         background: $dark-grey;
         border: 0px;
     }
-    &-buttons { //стили кнопок панели в content
+    &-buttons {
+        //стили кнопок панели в content
         width: 100%;
         height: 30px;
         background: $light-grey;
@@ -26,7 +27,7 @@ $red: #e3796a;
         &-done {
             background: rgb(6, 88, 6);
             box-sizing: border-box;
-            width:157px;
+            width: 157px;
             text-align: center;
             display: inline-block;
             border: 3px solid $border-grey;
@@ -36,7 +37,7 @@ $red: #e3796a;
         &-processing {
             background: rgb(62, 78, 143);
             box-sizing: border-box;
-            width:157px;
+            width: 157px;
             text-align: center;
             display: inline-block;
             border: 3px solid $border-grey;
@@ -46,17 +47,17 @@ $red: #e3796a;
         &-waiting {
             background: rgb(80, 77, 77);
             box-sizing: border-box;
-            width:157px;
+            width: 157px;
             text-align: center;
             display: inline-block;
             border: 3px solid $border-grey;
             border-radius: 5px;
             cursor: pointer;
         }
-        &-save{
+        &-save {
             background: black;
             box-sizing: border-box;
-            width:157px;
+            width: 157px;
             text-align: center;
             display: inline-block;
             border: 3px solid $border-grey;
@@ -66,7 +67,7 @@ $red: #e3796a;
         &-delete {
             background: black;
             box-sizing: border-box;
-            width:157px;
+            width: 157px;
             text-align: center;
             display: inline-block;
             border: 3px solid $border-grey;

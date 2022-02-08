@@ -14,9 +14,9 @@ import './components/Task/Task.scss'
 
 
 //рендер всего приложения в Strict mode
-ReactDOM.render(      
-    <React.StrictMode>   
-    <App />
+ReactDOM.render(
+    <React.StrictMode>
+        <App />
     </React.StrictMode>,
     document.getElementById('root')
 );

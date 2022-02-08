@@ -5,7 +5,7 @@ import React from "react";
 import NewTask from "../NewTask/NewTask";
 import Task from "../Task/Task";
 
-//комнонент отвечающий за отображение всех оглавлений задач и добавление новых
+//компонент отвечающий за отображение всех оглавлений задач и добавление новых
 function List({ tasks, addNewTask, changeActiveTo }) {
 
     const handleClick = (task) => { //если нажали на оглавление задачи - сделать её активной
@@ -13,7 +13,7 @@ function List({ tasks, addNewTask, changeActiveTo }) {
         changeActiveTo(task);
     }
     return ( //заголовок "задачи: {N}", кнопка "Новая задача", список содержащий в себе .map для рендера каждого оглавления из tasks, ключ=task.id
-        <React.Fragment> 
+        <React.Fragment>
             <header className="list-header">Задачи: {tasks.length}</header>
             <NewTask addNewTask={addNewTask} />
             <ul className="list">
