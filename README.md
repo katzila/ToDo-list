@@ -1,6 +1,6 @@
-## Simple ToDo list based on ReactJs
+## Simple ToDo list
 
-This project was bootstrapped with [Create React App]
+Simple ToDo list based on pure ReactJs. Each todo have 'content' and 'header' field. New todos can be added via custom input form.
 
 ## Available Scripts
 
