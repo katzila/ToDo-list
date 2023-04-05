@@ -1,4 +1,3 @@
-//деструктуризация и доставание useEffect и useState
 import { useEffect, useState } from "react"
 
 function Content({ task, changeStatus, removeTask, changeTaskContent }) {
@@ -9,7 +8,7 @@ function Content({ task, changeStatus, removeTask, changeTaskContent }) {
         setTempTask({ ...task }); // обновляем временное содержимое, если task поменялось извне
     }, [task]);
 
-    const handleCilickSave = () => { //сохранить всё из временного хранилища в основное
+    const handleClickSave = () => { //сохранить всё из временного хранилища в основное
         changeTaskContent(task.id, tempTask.label, tempTask.text);
     }
 
@@ -42,7 +41,7 @@ function Content({ task, changeStatus, removeTask, changeTaskContent }) {
                 <div className="content-buttons-done" onClick={() => { changeStatus(task.id, "done") }}>Выполнена</div>
                 <div className="content-buttons-waiting" onClick={() => { changeStatus(task.id, "waiting") }}>Ожидает</div>
                 <div className="content-buttons-processing" onClick={() => { changeStatus(task.id, "processing") }}>В процессе</div>
-                <div className="content-buttons-save" onClick={() => { handleCilickSave() }}>Сохранить</div>
+                <div className="content-buttons-save" onClick={() => { handleClickSave() }}>Сохранить</div>
                 <div className="content-buttons-delete" onClick={() => { handleClickDelete(task.id); }}>Удалить</div>
             </div>
             <textarea value={tempTask ? tempTask.text : ""} placeholder="дойти до магазина и купить корм" onChange={handleTextChange} className="content-field" />
